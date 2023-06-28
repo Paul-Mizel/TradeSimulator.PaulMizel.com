@@ -1,0 +1,248 @@
+<div class="container">
+  <h1>TradeSimulator</h1>
+  <div class="col-lg-8 px-0">
+    <p class="fs-5">An intelligent trading simulator for trades and risk analysis.</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+
+
+  <div class="row">
+    <!-- BLOCK 8-->
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <h5 class="card-title">Trading Strategy Settings</h5>
+
+            <div class="col-6">
+              <label for="startingBalance"><a href="#" data-bs-toggle="tooltip"
+                  data-bs-title="How much money you will use to trade."><i class="fas fa-info-circle"
+                    aria-hidden="true"></i></a> Starting Balance <small>USD</small></label>
+              <input id="startingBalance" name="startingBalance" type="number" class="form-control" placeholder="1000"
+                value="1000">
+            </div>
+            <div class="col-6">
+              <label for="Winrate"><a href="#" data-bs-toggle="tooltip"
+                  data-bs-title="Your expected Win Rate when you trade."><i class="fas fa-info-circle"
+                    aria-hidden="true"></i></a> Target Win Rate <small>%</small></label>
+              <input id="winrate" name="winRate" type="number" class="form-control" placeholder="60" value="60"
+                max="100" min="0">
+            </div>
+
+            <div class="col-6">
+              <label for="targetProfit">
+                <a href="#" data-bs-toggle="tooltip" data-bs-title="Your Profit Target for winning trades."><i
+                    class="fas fa-info-circle" aria-hidden="true"></i></a>
+
+                Take Profit <small>%</small></label>
+              <input id="targetProfit" name="targetProfit" type="number" step="0.01" class="form-control"
+                placeholder="2" value="2" max="100" min="0">
+            </div>
+            <div class="col-6">
+              <label for="stopLoss">
+                <a href="#" data-bs-toggle="tooltip" data-bs-title="Your Stop Loss for losing trades."><i
+                    class="fas fa-info-circle" aria-hidden="true"></i></a>
+                Stop Loss <small>%</small></label>
+              <input id="stopLoss" name="stopLoss" type="number" step="0.01" class="form-control " value="2"
+                placeholder="2" max="100" min="0" wire:model.defer="stopLoss">
+            </div>
+
+
+            <div class="col-6">
+              <label for="numberOfTrades">
+                <a href="#" data-bs-toggle="tooltip"
+                  data-bs-title="How many trades this simulation will be based on."><i class="fas fa-info-circle"
+                    aria-hidden="true"></i></a>
+                Number of Trades</label>
+              <input id="numberOfTrades" name="numberOfTrades" type="number" class="form-control " placeholder="100"
+                value="100" wire:model.defer="numberOfTrades">
+            </div>
+            <div class="col-6">
+              <label for="leverage" data-toggle="tooltip" title="" data-original-title="">
+                <a href="#" data-bs-toggle="tooltip" data-bs-title="How much Leverage you will use when you trade."><i
+                    class="fas fa-info-circle" aria-hidden="true"></i></a>
+                Leverage</label>
+              <input id="leverage" name="leverage" type="number" class="form-control " placeholder="1" value="1"
+                max="100" min="0" wire:model.defer="leverage">
+            </div>
+
+            <div class="col-6">
+              <label for="exchange">
+                <a href="#" data-bs-toggle="tooltip" data-bs-title="Which Exchange the fees should be based on."><i
+                    class="fas fa-info-circle" aria-hidden="true"></i></a>
+
+                Exchange</label>
+              <select class="custom-select form-control" id="exchange" name="exchange">
+                <option value="binance" selected="">Binance</option>
+                <option value="bybit">Bybit</option>
+                <option value="bitget">Bitget</option>
+                <option value="bitfinex">Bitfinex</option>
+                <option value="bitstamp">Bitstamp</option>
+                <option value="bithumb">Bithumb</option>
+                <option value="coinbase">Coinbase</option>
+                <option value="huobi">Huobi</option>
+                <option value="kraken">Kraken</option>
+                <option value="okex">OKEx</option>
+                <option value="upbit">Upbit</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="col-6">
+              <div class="row">
+                <div class="col-6">
+                  <label for="makerFee" title="">Maker Fee <small>%</small></label>
+                  <input id="makerFee" name="makerFee" type="number" step=".005" class="form-control" placeholder="0.1"
+                    value="0.1" max="100" min="-2">
+                </div>
+                <div class="col-6">
+                  <label for="takerFee">Taker Fee <small>%</small></label>
+                  <input id="takerFee" name="takerFee" type="number" step=".005" class="form-control" value="0.1"
+                    placeholder="0.1" max="100" min="-2">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <hr />
+            </div>
+
+            <div class="col-6">
+              <a id="submit" class="btn btn-success" role="button"><i class="fas fa-redo-alt" aria-hidden="true"></i>
+                Run
+                Strategy</a>
+            </div>
+            <div class="col-6">
+              <div class="dropdown">
+                <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Create a account
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://accounts.binance.com/register?ref=18567919"
+                      target="_blank">Binance account</a></li>
+                  <li><a class="dropdown-item"
+                      href="https://www.bitget.com/referral/register?from=referral&clacCode=M4ZPZYGL"
+                      target="_blank">Bitget account</a></li>
+                  <li><a class="dropdown-item" href="https://pro.coinbase.com" target="_blank">Coinbase account</a></li>
+                  <li><a class="dropdown-item" href="https://www.kraken.com" target="_blank">Kraken account</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOCK 4-->
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <h5 class="card-title">Result Breakdown</h5>
+            <div class="col-12">
+              <h5 class="text">Real Win Rate <small style="float: right;" id="stat_winrate">Win Rate</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Trades <small style="float: right;" id="stat_trades">0</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Wins <small style="float: right;" id="stat_wins">0</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Losses <small style="float: right;" id="stat_losses">0</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Won <small style="float: right;" id="stat_won">0</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Lost <small style="float: right;" id="stat_lost">0</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Fees Paid <small style="float: right;" id="stat_fees">0</small></h5>
+            </div>
+            <div class="col-12">
+              <h5 class="text">Profit Rate <small style="float: right;" id="stat_profitrate">0</small></h5>
+            </div>
+            <div class="col-12">
+              <hr />
+            </div>
+            <div class="col-12">
+              <h5 class="green">Profit <small style="float: right;" id="stat_profit">0</small></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div id="chart_div"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Trades</h5>
+          <div class="table-responsive" style="max-height: 400px; overflow: scroll;">
+            <table class="table" id="tradesTable">
+              <thead class="fixed-thead bg-light">
+                <tr>
+                  <th class="header" scope="col">#</th>
+                  <th class="header" scope="col">Win/Loss</th>
+                  <th class="header" scope="col">Fee</th>
+                  <th class="header" scope="col">PL %</th>
+                  <th class="header" scope="col">PL USD</th>
+                  <th class="header" scope="col">New Balance</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--CONTENT-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="container">
+    <div class="col-lg-12 px-0">
+      <p>Disclaimer: This simulation tool is designed to estimate potential earnings and losses from trading by
+        considering factors such as win rate, fees, and leverage. While we strive for accuracy, it's important to note
+        that live trading results may differ from the simulated outcomes.</p>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+<script async src="tradesimulator.js"></script>

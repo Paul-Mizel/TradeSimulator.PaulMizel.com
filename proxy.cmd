@@ -1,0 +1,1 @@
+tools\ngrok\ngrok.exe http --host-header=rewrite 80

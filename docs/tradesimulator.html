@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TradeSimulator: An intelligent trading simulator for trades and risk analysis.</title>
+<meta content="An intelligent crypto simulator for trades and risk analysis." name="description">
+<meta content="Simulate Profits Crypto Trading Strategy Win Rates Risk-to-Reward Risk-Reward-Ratio RRR"
+name="keywords">
+<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<!-- Favicons -->
+<link href="assets/img/favicon.png" rel="icon">
+<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link rel="stylesheet" type="text/css"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" type="text/css"
+href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+<a class="navbar-brand mb-0 h1" href="index.html">
+<!--<img src="/assets/img/nav-brand.png" alt="Logo" width="34" height="24" class="d-inline-block align-text-top">-->
+Trading
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" href="#">About</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+Tools
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="tradesimulator.html">TradeSimulator</a></li>
+<li><a class="dropdown-item" href="orderbook.html">Orderbook</a></li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="resources.html">Resources</a>
+</li>
+<li class="nav-item dropdown d-none">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+Language
+</a>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="#">German</a></li>
+<li><a class="dropdown-item" href="#">Russian</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- LIGHT SWITCH -->
+<div class="d-flex">
+<div class="form-check form-switch ms-auto mt-3 me-3">
+<label class="form-check-label ms-3" for="lightSwitch">
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-brightness-high"
+viewBox="0 0 16 16">
+<path
+d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+</svg>
+</label>
+<input class="form-check-input" type="checkbox" id="lightSwitch" />
+</div>
+</div>
+<div class="container">
+<h1>TradeSimulator</h1>
+<div class="col-lg-8 px-0">
+<p class="fs-5">An intelligent trading simulator for trades and risk analysis.</p>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<!-- BLOCK 8-->
+<div class="col-md-8">
+<div class="card">
+<div class="card-body">
+<div class="row">
+<h5 class="card-title">Trading Strategy Settings</h5>
+<div class="col-6">
+<label for="startingBalance"><a href="#" data-bs-toggle="tooltip"
+data-bs-title="How much money you will use to trade."><i class="fas fa-info-circle"
+aria-hidden="true"></i></a> Starting Balance <small>USD</small></label>
+<input id="startingBalance" name="startingBalance" type="number" class="form-control" placeholder="1000"
+value="1000">
+</div>
+<div class="col-6">
+<label for="Winrate"><a href="#" data-bs-toggle="tooltip"
+data-bs-title="Your expected Win Rate when you trade."><i class="fas fa-info-circle"
+aria-hidden="true"></i></a> Target Win Rate <small>%</small></label>
+<input id="winrate" name="winRate" type="number" class="form-control" placeholder="60" value="60"
+max="100" min="0">
+</div>
+<div class="col-6">
+<label for="targetProfit">
+<a href="#" data-bs-toggle="tooltip" data-bs-title="Your Profit Target for winning trades."><i
+class="fas fa-info-circle" aria-hidden="true"></i></a>
+Take Profit <small>%</small></label>
+<input id="targetProfit" name="targetProfit" type="number" step="0.01" class="form-control"
+placeholder="2" value="2" max="100" min="0">
+</div>
+<div class="col-6">
+<label for="stopLoss">
+<a href="#" data-bs-toggle="tooltip" data-bs-title="Your Stop Loss for losing trades."><i
+class="fas fa-info-circle" aria-hidden="true"></i></a>
+Stop Loss <small>%</small></label>
+<input id="stopLoss" name="stopLoss" type="number" step="0.01" class="form-control " value="2"
+placeholder="2" max="100" min="0" wire:model.defer="stopLoss">
+</div>
+<div class="col-6">
+<label for="numberOfTrades">
+<a href="#" data-bs-toggle="tooltip"
+data-bs-title="How many trades this simulation will be based on."><i class="fas fa-info-circle"
+aria-hidden="true"></i></a>
+Number of Trades</label>
+<input id="numberOfTrades" name="numberOfTrades" type="number" class="form-control " placeholder="100"
+value="100" wire:model.defer="numberOfTrades">
+</div>
+<div class="col-6">
+<label for="leverage" data-toggle="tooltip" title="" data-original-title="">
+<a href="#" data-bs-toggle="tooltip" data-bs-title="How much Leverage you will use when you trade."><i
+class="fas fa-info-circle" aria-hidden="true"></i></a>
+Leverage</label>
+<input id="leverage" name="leverage" type="number" class="form-control " placeholder="1" value="1"
+max="100" min="0" wire:model.defer="leverage">
+</div>
+<div class="col-6">
+<label for="exchange">
+<a href="#" data-bs-toggle="tooltip" data-bs-title="Which Exchange the fees should be based on."><i
+class="fas fa-info-circle" aria-hidden="true"></i></a>
+Exchange</label>
+<select class="custom-select form-control" id="exchange" name="exchange">
+<option value="binance" selected="">Binance</option>
+<option value="bybit">Bybit</option>
+<option value="bitget">Bitget</option>
+<option value="bitfinex">Bitfinex</option>
+<option value="bitstamp">Bitstamp</option>
+<option value="bithumb">Bithumb</option>
+<option value="coinbase">Coinbase</option>
+<option value="huobi">Huobi</option>
+<option value="kraken">Kraken</option>
+<option value="okex">OKEx</option>
+<option value="upbit">Upbit</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="col-6">
+<div class="row">
+<div class="col-6">
+<label for="makerFee" title="">Maker Fee <small>%</small></label>
+<input id="makerFee" name="makerFee" type="number" step=".005" class="form-control" placeholder="0.1"
+value="0.1" max="100" min="-2">
+</div>
+<div class="col-6">
+<label for="takerFee">Taker Fee <small>%</small></label>
+<input id="takerFee" name="takerFee" type="number" step=".005" class="form-control" value="0.1"
+placeholder="0.1" max="100" min="-2">
+</div>
+</div>
+</div>
+<div class="col-12">
+<hr />
+</div>
+<div class="col-6">
+<a id="submit" class="btn btn-success" role="button"><i class="fas fa-redo-alt" aria-hidden="true"></i>
+Run
+Strategy</a>
+</div>
+<div class="col-6">
+<div class="dropdown">
+<button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+aria-expanded="false">
+Create a account
+</button>
+<ul class="dropdown-menu">
+<li><a class="dropdown-item" href="https://accounts.binance.com/register?ref=18567919"
+target="_blank">Binance account</a></li>
+<li><a class="dropdown-item"
+href="https://www.bitget.com/referral/register?from=referral&clacCode=M4ZPZYGL"
+target="_blank">Bitget account</a></li>
+<li><a class="dropdown-item" href="https://pro.coinbase.com" target="_blank">Coinbase account</a></li>
+<li><a class="dropdown-item" href="https://www.kraken.com" target="_blank">Kraken account</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BLOCK 4-->
+<div class="col-md-4">
+<div class="card">
+<div class="card-body">
+<div class="row">
+<h5 class="card-title">Result Breakdown</h5>
+<div class="col-12">
+<h5 class="text">Real Win Rate <small style="float: right;" id="stat_winrate">Win Rate</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Trades <small style="float: right;" id="stat_trades">0</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Wins <small style="float: right;" id="stat_wins">0</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Losses <small style="float: right;" id="stat_losses">0</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Won <small style="float: right;" id="stat_won">0</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Lost <small style="float: right;" id="stat_lost">0</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Fees Paid <small style="float: right;" id="stat_fees">0</small></h5>
+</div>
+<div class="col-12">
+<h5 class="text">Profit Rate <small style="float: right;" id="stat_profitrate">0</small></h5>
+</div>
+<div class="col-12">
+<hr />
+</div>
+<div class="col-12">
+<h5 class="green">Profit <small style="float: right;" id="stat_profit">0</small></h5>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<hr />
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<div class="card">
+<div class="card-body">
+<div id="chart_div"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<hr />
+</div>
+</div>
+<div class="row">
+<div class="col-12">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Trades</h5>
+<div class="table-responsive" style="max-height: 400px; overflow: scroll;">
+<table class="table" id="tradesTable">
+<thead class="fixed-thead bg-light">
+<tr>
+<th class="header" scope="col">#</th>
+<th class="header" scope="col">Win/Loss</th>
+<th class="header" scope="col">Fee</th>
+<th class="header" scope="col">PL %</th>
+<th class="header" scope="col">PL USD</th>
+<th class="header" scope="col">New Balance</th>
+</tr>
+</thead>
+<tbody>
+<!--CONTENT-->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="col-lg-12 px-0">
+<p>Disclaimer: This simulation tool is designed to estimate potential earnings and losses from trading by
+considering factors such as win rate, fees, and leverage. While we strive for accuracy, it's important to note
+that live trading results may differ from the simulated outcomes.</p>
+</div>
+</div>
+</div>
+<script async src="tradesimulator.js"></script>
+<!-- Footer -->
+<footer class="text-center">
+<!-- Section: Social media -->
+<section class="container d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+<!-- Left -->
+<div class="me-5 d-none d-lg-block">
+<span>Get connected on social networks:</span>
+</div>
+<!-- Left -->
+<!-- Right -->
+<div>
+<a href="https://www.facebook.com/paulmizel" class="me-4 text-reset">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://twitter.com/paulmizel" class="me-4 text-reset">
+<i class="fab fa-twitter"></i>
+</a>
+<a href="https://www.instagram.com/crypto_trading_book/" class="me-4 text-reset">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="www.linkedin.com/in/paulmizel" class="me-4 text-reset">
+<i class="fab fa-linkedin"></i>
+</a>
+<a href="https://github.com/Paul-Mizel/Crypto-Trading-Unleashed" class="me-4 text-reset">
+<i class="fab fa-github"></i>
+</a>
+</div>
+<!-- Right -->
+</section>
+<!-- Section: Social media -->
+<!-- Section: Links  -->
+<section class="">
+<div class="container text-center text-md-start mt-5">
+<!-- Grid row -->
+<div class="row mt-3">
+<!-- Grid column -->
+<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+<!-- Content -->
+<h6 class="text-uppercase fw-bold mb-4">
+<i class="fas fa-gem me-3"></i>PAUL MIZEL
+</h6>
+<p>
+A collection of some helping tools.
+</p>
+</div>
+<!-- Grid column -->
+<!-- Grid column -->
+<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+<!-- Links -->
+<h6 class="text-uppercase fw-bold mb-4">
+Tools
+</h6>
+<p>
+<a href="www.amazon.com" class="text-reset">Trading Books</a>
+</p>
+<p>
+<a href="tradesimulator.html" class="text-reset">TradeSimulator</a>
+</p>
+<p>
+<a href="orderbook.html" class="text-reset">Orderbook</a>
+</p>
+<p>
+<a href="https://github.com/Paul-Mizel/Crypto-Trading-Unleashed" class="text-reset">Github</a>
+</p>
+</div>
+<!-- Grid column -->
+<!-- Grid column -->
+<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+<!-- Links -->
+<h6 class="text-uppercase fw-bold mb-4">
+Useful links
+</h6>
+<p>
+<a href="resources.html" class="text-reset">Useful links</a>
+</p>
+<p>
+<a href="#!" class="text-reset">Disclaimer</a>
+</p>
+<p>
+<a href="#!" class="text-reset">Imprint</a>
+</p>
+</div>
+<!-- Grid column -->
+<!-- Grid column -->
+<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+<!-- Links -->
+<h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+<p><i class="fas fa-home me-3"></i> NRW, Dortmund, Germany</p>
+<p>
+<i class="fas fa-envelope me-3"></i>
+dont-send-trash@gmail.com
+</p>
+<p class="d-none"><i class="fas fa-phone me-3"></i> + 000</p>
+<p class="d-none"><i class="fas fa-print me-3"></i> + 000</p>
+</div>
+<!-- Grid column -->
+</div>
+<!-- Grid row -->
+</div>
+</section>
+<!-- Section: Links  -->
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+Copyright &copy; <script>document.write(new Date().getFullYear())</script>:
+<a class="text-reset fw-bold" href="https://paulmizel.com/" target="_blank">paulmizel.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"
+integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+integrity="sha256-BRqBN7dYgABqtY9Hd4ynE+1slnEw+roEPFzQ7TRRfcg=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+//if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+//  document.write('<script src="loader.js"><\/script>');
+//}
+</script>
+<script src="core.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1ZJVYBXM64" crossorigin="anonymous"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag('js', new Date());
+gtag('config', 'G-1ZJVYBXM64');
+</script>
+<script>
+window.cookieconsent.initialise({
+"palette": {
+"popup": { "background": "#e9e8e6", "text": "#444444" },
+"button": { "background": "#34b7a7", "text": "#ffffff" }
+},
+"theme": "edgeless",
+"position": "bottom-right",
+"content": {
+"message": "This website use cookies",
+"dismiss": "Got it!",
+"link": "More...",
+"href": "https://www.cookiesandyou.com/"
+}
+});
+</script>
+</body>
+</html>

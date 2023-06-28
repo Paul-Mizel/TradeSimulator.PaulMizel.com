@@ -1,0 +1,92 @@
+/*
+ * Custom CSS
+ */
+
+:root {
+  --bs-body-bg: var(--bs-gray-100);
+}
+
+.card{
+  background-color: #fff;
+}
+
+a{
+  text-decoration: none;
+}
+
+.navbar{
+  background-color: rgb(0, 195, 255);
+}
+
+footer a:hover i{
+  color: rgb(0, 195, 255);
+}
+
+hr{
+  color: rgb(177, 182, 187);
+  border-width:  2px;
+  border-color:  rgb(222, 226, 230);
+}
+
+th, thead{
+  position: sticky;
+  top: 0;
+}
+
+#lightSwitch {
+  transform: scale(1.8);
+}
+
+.custom-theme.bg-light {
+  background-color: darkslategray !important;
+  border-radius: 3px;
+  color: gainsboro;
+  text-decoration: underline;
+}
+
+.custom-theme.bg-dark {
+  background-color: blanchedalmond !important;
+  box-shadow: 10px 5px 5px rgba(246, 255, 219, 0.5);
+  color: dimgray;
+  text-decoration: overline;
+}
+
+.bg-dark tspan {
+  fill : white !important;
+  color: dimgray;
+}
+
+.bg-light tspan {
+  fill : gray !important;
+  color: dimgray;
+}
+
+
+
+
+.btn-success {
+  background-color: #34b7a7;
+}
+
+.btn-success:hover {  
+  background-color:  #28887d;
+  border-color:  #1b5c54;
+}
+
+.btn-danger {
+  background-color: #ef5350;
+}
+
+.btn-danger:hover {
+  background-color: #993836;
+  border-color:  #ef5350;
+}
+
+.green-color{
+  background-color: #34b7a7;
+}
+
+.red-color{
+  background-color: #ef5350;
+}
+
