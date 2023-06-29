@@ -14,7 +14,7 @@ $(function () {
     if (result.length >= 1 && result[0] == "?symbol")
       selected_symbol = result[1];
 
-    symbols.sort(function (a, b) {
+    symbols = symbols.sort(function (a, b) {
       if (a.symbol < b.symbol) {
         return -1;
       }
