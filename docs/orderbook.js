@@ -14,6 +14,16 @@ $(function () {
     if (result.length >= 1 && result[0] == "?symbol")
       selected_symbol = result[1];
 
+    symbols.sort(function (a, b) {
+      if (a.symbol < b.symbol) {
+        return -1;
+      }
+      if (a.symbol > b.symbol) {
+        return 1;
+      }
+      return 0;
+    });
+
     for (var i = 0; i < symbols.length; i++) {
       $('#symbols').append($('<option>', {
         value: symbols[i].symbol,
